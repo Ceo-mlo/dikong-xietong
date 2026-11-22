@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>地空协同林业监测决策系统</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.9 3.8v7.8L12 19.7 5.1 15.9V8.1L12 4.3Z" fill="currentColor"/>
+      <path d="M11 8.5v5.2l3.4 2 .9-1.5-2.8-1.6V8.5H11Z" fill="currentColor"/>
+    </svg>
+    <div class="brand-text">
+      <strong>地空协同林业监测决策系统</strong>
+      <span>单机 · 离线 · 可复现</span>
+    </div>
+  </div>
+
+  <div class="topbar-mid">
+    <label class="field inline">
+      <span>场景</span>
+      <select id="scenarioSelect" aria-label="选择场景"></select>
+    </label>
+    <span class="chip" id="scenarioChip">未连接</span>
+    <span class="job-light" id="jobLight" title="作业状态">
+      <i></i><span>空闲</span>
+    </span>
+  </div>
+
+  <div class="topbar-right">
+    <span class="hash" id="hashText" title="场景哈希">—</span>
+    <button class="btn ghost" id="btnRefresh" title="重新读取场景数据">
+      <svg viewBox="0 0 24 24" class="ic"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z" fill="currentColor"/></svg>
+      刷新
+    </button>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="sidebar" aria-label="主导航">
+    <ul id="navList"></ul>
+    <div class="sidebar-foot">
+      <div class="mini-label">当前阶段</div>
+      <div class="mini-value" id="phaseText">规划决策 v1.0</div>
+      <div class="mini-note">单机单车 · 建议式决策（L2）</div>
+    </div>
+  </nav>
+
+  <main class="main" id="view" tabindex="-1"></main>
+</div>
+
+<div class="statusbar">
+  <span id="statusText">就绪</span>
+  <span class="statusbar-right">
+    <span class="mono" id="engineText">—</span>
+    <span class="dot-sep"></span>
+    <span id="clock"></span>
+  </span>
+</div>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal-head">
+      <h2 id="modalTitle">方案详情</h2>
+      <button class="btn icon" id="modalClose" aria-label="关闭">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </button>
+    </header>
+    <div class="modal-body" id="modalBody"></div>
+    <footer class="modal-foot" id="modalFoot"></footer>
+  </div>
+</div>
+
+<script src="assets/api.js"></script>
+<script src="assets/charts.js"></script>
+<script src="assets/map.js"></script>
+<script src="assets/views.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
