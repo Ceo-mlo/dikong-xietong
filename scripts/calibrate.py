@@ -11,8 +11,7 @@ import numpy as np
 
 from foresteye.kernel import geo, grid as gridmod, region as regionmod, roads, sortie
 
-WS = os.path.abspath(os.path.join(ROOT, "..", ".."))
-CANS = os.path.join(WS, "tdp软件依赖的模型", "数据与代码", "pyworkspace", "Canshu")
+CANS = regionmod.DEFAULT_SOURCE_DIR
 
 t0 = time.time()
 reg, issues = regionmod.load_from_files(

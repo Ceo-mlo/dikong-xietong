@@ -14,8 +14,7 @@ sys.path.insert(0, os.path.join(ROOT, "backend"))
 
 from foresteye.kernel import pipeline, region as regionmod  # noqa: E402
 
-WS = os.path.abspath(os.path.join(ROOT, "..", ".."))
-CANS = os.path.join(WS, "tdp软件依赖的模型", "数据与代码", "pyworkspace", "Canshu")
+CANS = regionmod.DEFAULT_SOURCE_DIR
 
 MODE = sys.argv[1] if len(sys.argv) > 1 else "quick"
 CFG = {

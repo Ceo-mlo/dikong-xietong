@@ -22,7 +22,7 @@ python backend\foresteye\api\app.py --port 8766
 
 > 若 `python` 不可用（Windows 商店占位符），用真实解释器或改 `start.bat` 里的 `PY` 路径。
 > 需要 `numpy`、`openpyxl`、`python-docx` 三个包，其余全部标准库。
-> 仓库只含应用代码；运行求解还需要原始边界/路网数据（`zgz_point.xlsx`、`kongdong_12.xlsx`、`Build_with_utm_coords.csv`），默认在 `tdp软件依赖的模型/数据与代码/pyworkspace/Canshu` 查找，也可用环境变量 `FORESTEYE_SOURCE_DIR` 指定目录。
+> 仓库已内置运行所需的原始边界/路网数据（`data/source/`：`zgz_point.xlsx`、`kongdong_12.xlsx`、`Build_with_utm_coords.csv`）；也可用环境变量 `FORESTEYE_SOURCE_DIR` 指定其他数据目录。
 
 ## 页面
 
@@ -63,7 +63,9 @@ python backend\foresteye\api\app.py --port 8766
 │       └── export.py         GeoJSON / KML / CSV / JSON / Word
 ├── web/                      index.html + assets（无 CDN）
 ├── scripts/                  calibrate.py 标定、solve_demo.py 冒烟
-└── data/                     区域缓存（首次运行生成）
+└── data/
+    ├── source/               原始数据（随仓库提供）
+    └── ...                   区域缓存（首次运行生成，已忽略）
 ```
 
 ## 接口

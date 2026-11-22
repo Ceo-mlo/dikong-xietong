@@ -12,13 +12,19 @@ import numpy as np
 from . import geo
 
 _REL_SOURCE_DIR = os.path.join("tdp软件依赖的模型", "数据与代码", "pyworkspace", "Canshu")
+_REPO_ROOT = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+)
+_BUNDLED_SOURCE_DIR = os.path.join(_REPO_ROOT, "data", "source")
 
 
 def _resolve_source_dir() -> str:
-    """从当前目录向上找原始数据目录，找不到时退回相对路径。"""
+    """优先使用仓库内置 data/source，其次从当前目录向上找外部数据目录。"""
     env = os.environ.get("FORESTEYE_SOURCE_DIR")
     if env and os.path.isdir(env):
         return env
+    if os.path.isdir(_BUNDLED_SOURCE_DIR):
+        return _BUNDLED_SOURCE_DIR
     here = os.path.dirname(os.path.abspath(__file__))
     for base in (os.getcwd(), here):
         probe = base

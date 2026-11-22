@@ -4,7 +4,9 @@ __pycache__/
 .mypy_cache/
 .venv/
 venv/
-data/
+data/*
+!data/source/
+!data/source/**
 runtime/*
 !runtime/.keep
 *.log
