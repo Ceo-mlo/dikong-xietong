@@ -15,14 +15,14 @@ REM 2) 仓库根目录
 python run.py --port 8766
 
 REM 3) 直接跑服务文件（已支持）
-python backend\foresteye\api\app.py --port 8766
+python backend\dikong_xietong\api\app.py --port 8766
 ```
 
 然后浏览器打开 <http://127.0.0.1:8766>。
 
 > 若 `python` 不可用（Windows 商店占位符），用真实解释器或改 `start.bat` 里的 `PY` 路径。
 > 需要 `numpy`、`openpyxl`、`python-docx` 三个包，其余全部标准库。
-> 仓库已内置运行所需的原始边界/路网数据（`data/source/`：`zgz_point.xlsx`、`kongdong_12.xlsx`、`Build_with_utm_coords.csv`）；也可用环境变量 `FORESTEYE_SOURCE_DIR` 指定其他数据目录。
+> 仓库已内置运行所需的原始边界/路网数据（`data/source/`：`zgz_point.xlsx`、`kongdong_12.xlsx`、`Build_with_utm_coords.csv`）；也可用环境变量 `DIKONG_SOURCE_DIR` 指定其他数据目录。
 
 ## 页面
 
@@ -44,7 +44,7 @@ python backend\foresteye\api\app.py --port 8766
 地空协同林业监测决策系统/
 ├── run.py                    启动器（把 backend 加入 sys.path）
 ├── start.bat                 Windows 双击启动
-├── backend/foresteye/
+├── backend/dikong_xietong/
 │   ├── kernel/               纯算法内核，不依赖 HTTP
 │   │   ├── geo.py            UTM 49N 正反算、点在多边形、凸包、RDP
 │   │   ├── region.py         区域装配（外环 − 空洞 + 路网 + 基地）

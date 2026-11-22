@@ -32,11 +32,11 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 if __package__ in (None, ""):
-    # 允许直接运行本文件：python backend/foresteye/api/app.py
+    # 允许直接运行本文件：python backend/dikong_xietong/api/app.py
     _BACKEND = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     if _BACKEND not in sys.path:
         sys.path.insert(0, _BACKEND)
-    __package__ = "foresteye.api"
+    __package__ = "dikong_xietong.api"
 
 import numpy as np
 

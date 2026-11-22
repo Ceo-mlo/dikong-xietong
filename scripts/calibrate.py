@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.join(ROOT, "backend"))
 
 import numpy as np
 
-from foresteye.kernel import geo, grid as gridmod, region as regionmod, roads, sortie
+from dikong_xietong.kernel import geo, grid as gridmod, region as regionmod, roads, sortie
 
 CANS = regionmod.DEFAULT_SOURCE_DIR
 

@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, "backend"))
 
-from foresteye.kernel import pipeline, region as regionmod  # noqa: E402
+from dikong_xietong.kernel import pipeline, region as regionmod  # noqa: E402
 
 CANS = regionmod.DEFAULT_SOURCE_DIR
 
